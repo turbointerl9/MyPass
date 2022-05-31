@@ -79,7 +79,7 @@ namespace TemplateApp.MVVM.ViewModel
             }
         }
 
-        private ObservableCollection<LogData> logDatas;
+        /*private ObservableCollection<LogData> logDatas;
 
         public ObservableCollection<LogData> LogDatas
         {
@@ -88,7 +88,9 @@ namespace TemplateApp.MVVM.ViewModel
             {
                 SetProperty(ref logDatas, value);
             }
-        }
+        }*/
+
+        public ObservableCollection<LogData> LogDatas { get; set; }
 
         private LogData _currentItem;
 
@@ -217,16 +219,6 @@ namespace TemplateApp.MVVM.ViewModel
 
             AddCommand = new RelayCommand(o =>
             {
-                /*EditableItem = new LogData()
-                {
-                    type = Type,
-                    username = Username,
-                    password = Password,
-                    description = Description,
-                    website = Website,
-                    ImageUri = $"https://www.google.com/s2/favicons?sz=64&domain_url={Website}"
-                };
-                */
                 LogDatas.Add(new LogData()
                 {
                     username = "discorduser1",
@@ -236,7 +228,6 @@ namespace TemplateApp.MVVM.ViewModel
                     website = "discord.com",
                     ImageUri = "https://www.google.com/s2/favicons?sz=64&domain_url=discord.com"
                 });
-
             });
 
             EditViewCommand = new RelayCommand(o =>
@@ -279,6 +270,11 @@ namespace TemplateApp.MVVM.ViewModel
                 PopulateCollection();
                 if (SearchInput != "" && SearchInput != null)
                     LogDatas = Convert(LogDatas.Where(x => x.username.ToLower().Contains(SearchInput.ToLower()) || x.type.ToLower().Contains(SearchInput.ToLower())));
+            });
+
+            CancelViewCommand = new RelayCommand(o =>
+            {
+                EditMode = null;
             });
             PopulateCollection();
 

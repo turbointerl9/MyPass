@@ -147,7 +147,7 @@
         </Grid>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3">
-            <Button Height="50" 
+            <Button Height="50" Command="{Binding CancelViewCommand}"
                     Width="150" 
                     Margin="25 20 0 0" 
                     Content="Cancel" Foreground="#ffff" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource ButtonTheme}"/>

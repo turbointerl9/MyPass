@@ -54,7 +54,8 @@
                 FontSize="22"
                 Content=" ⛭"
                 ToolTip="Settings"
-                Height="60" 
+                Height="60"
+                FontWeight="Bold"
                 Foreground="#b9b3aa"
                 Margin="0 500 0 0"
                 Style="{StaticResource MenuButtonTheme}"
@@ -69,12 +70,12 @@
                 Style="{StaticResource MenuButtonTheme}"
                 Command="{Binding LogoutCommand}"/>
 
-
+                
+           
         </StackPanel>
         
         <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
             <ContentControl Content="{Binding CurrentView}">
-                
             </ContentControl>
         </Grid>
 
