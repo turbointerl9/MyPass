@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type Button}"
+           x:Key="SpinnerTheme">
+        <Setter Property="Foreground" Value=" #CFCFCF"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="5" 
+                            Height="{TemplateBinding Height}" 
+                            Width="{TemplateBinding Width}" 
+                            Background="{TemplateBinding Background }" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            BorderThickness="1.5"
+                            BorderBrush="White">
+                        <Grid>
+                            <ContentPresenter x:Name="contpres" Margin="0,0,0,0" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Border.Background" Value="#122540"/>
+                            <Setter Property="Foreground" Value="white"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
